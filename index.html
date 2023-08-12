@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Net Session</title>
+  <link rel="icon" type="image/x-icon" href="favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="manifest" href="site.webmanifest" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-startup-image"
+    media="screen and (device-width: 2048px) and (device-height: 1536px) and (-webkit-device-pixel-ratio: 2) and (orientation: landscape)"
+    href="splash.png" />
+  <meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="black-translucent"
+  />
+  <link rel="apple-touch-icon" href="favicon.png">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+    .header {
+      background-color: #EC1C24;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    .header img {
+      width: 120px;
+      height: auto;
+    }
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #fff;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: #FF6668;
+    }
+    .content {
+      padding: 2rem;
+    }
+    .heading {
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-bottom: 1.5rem;
+    }
+    .scorecard-form {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+    .scorecard-form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+    .qty {
+      width: 60px;
+      padding: 0.5rem;
+      font-size: 1rem;
+    }
+    .total-input {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #EC1C24;
+      margin-top: 0.5rem;
+    }
+    .button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 2rem;
+    }
+    .button {
+      display: inline-block;
+      background-color: #FF4E50;
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      border: none;
+      border-radius: 5px;
+      padding: 0.8rem 1.5rem;
+      margin: 0 0.5rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+    .button:hover {
+      background-color: #FF6668;
+    }
+    .image-container {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+    .image-container img {
+      width: 50px;
+      height: 50px;
+      margin-right: 10px;
+      cursor: pointer;
+      transition: filter 0.3s ease;
+    }
+    .image-container img:hover {
+      filter: grayscale(100%);
+    }
+    @media screen and (max-width: 768px) {
+      .scorecard-form {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <a href="#"><img src="banner.png" alt="Net Session" /></a>
+    <h1>&nbsp;</h1>
+   
+  </div>
+
+  <div class="content">
+    <h2 class="heading">Scorecard</h2>
+    <form class="scorecard-form">
+      <div class="team-form">
+        <label for="teamOne">Team One:</label>
+       <div class="image-container">
+          <img src="1.png" width="50" height="50" alt="" class="image" data-index="1">
+          <img src="2.png" width="50" height="50" alt="" class="image" data-index="2">
+          <img src="3.png" width="50" height="50" alt="" class="image" data-index="3">
+        </div>
+        <input type="text" name="teamOneQty1" class="qty" placeholder="1">
+        <!-- Add input boxes 2 to 12 for Team One -->
+        <input type="text" name="teamOneQty2" class="qty" placeholder="2">
+		  <input type="text" name="teamOneQty3" class="qty" placeholder="3">
+		  <input type="text" name="teamOneQty4" class="qty" placeholder="4">
+		  <input type="text" name="teamOneQty5" class="qty" placeholder="5">
+		  <input type="text" name="teamOneQty6" class="qty" placeholder="6">
+		  <input type="text" name="teamOneQty7" class="qty" placeholder="7">
+		  <input type="text" name="teamOneQty8" class="qty" placeholder="8">
+		  <input type="text" name="teamOneQty9" class="qty" placeholder="9">
+		  <input type="text" name="teamOneQty10" class="qty" placeholder="10">
+		  <input type="text" name="teamOneQty11" class="qty" placeholder="11">
+        <input type="text" name="teamOneQty12" class="qty" placeholder="12">
+        <input type="text" name="teamOneTotal" class="total-input" readonly>
+      </div>
+
+         <div class="team-form">
+        <label for="teamTwo">Team Two:</label>
+        <div class="image-container">
+          <img src="4.png" width="50" height="50" alt="" class="image" data-index="4">
+          <img src="5.png" width="50" height="50" alt="" class="image" data-index="5">
+          <img src="6.png" width="50" height="50" alt="" class="image" data-index="6">
+        </div>
+        <input type="text" name="teamTwoQty1" class="qty" placeholder="1">
+        <input type="text" name="teamTwoQty2" class="qty" placeholder="2">
+		  <input type="text" name="teamTwoQty3" class="qty" placeholder="3">
+		  <input type="text" name="teamTwoQty4" class="qty" placeholder="4">
+		  <input type="text" name="teamTwoQty5" class="qty" placeholder="5">
+		  <input type="text" name="teamTwoQty6" class="qty" placeholder="6">
+		  <input type="text" name="teamTwoQty7" class="qty" placeholder="7">
+		  <input type="text" name="teamTwoQty8" class="qty" placeholder="8">
+		  <input type="text" name="teamTwoQty9" class="qty" placeholder="9">
+		  <input type="text" name="teamTwoQty10" class="qty" placeholder="10">
+		  <input type="text" name="teamTwoQty11" class="qty" placeholder="11">
+        <input type="text" name="teamTwoQty12" class="qty" placeholder="12">
+        <input type="text" name="teamTwoTotal" class="total-input" readonly>
+      </div>
+    </form>
+
+    <div class="button-container">
+      <input type="button" class="button" value="Calculate Totals" onclick="calculateTotals()">
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      const images = document.querySelectorAll(".image");
+      images.forEach(image => {
+        image.addEventListener("click", toggleGreyscale);
+      });
+
+      function toggleGreyscale(event) {
+        const index = event.target.getAttribute("data-index");
+        const image = document.querySelector(`[data-index="${index}"]`);
+
+        if (image.style.filter === "grayscale(100%)") {
+          image.style.filter = "none";
+        } else {
+          image.style.filter = "grayscale(100%)";
+        }
+      }
+    });
+
+    function calculateTotals() {
+      const teamOneScores = calculateTeamTotal("teamOne");
+      const teamTwoScores = calculateTeamTotal("teamTwo");
+
+      const teamOneTotalInput = document.querySelector("[name='teamOneTotal']");
+      teamOneTotalInput.value = teamOneScores.reduce((total, score) => total + score, 0);
+
+      const teamTwoTotalInput = document.querySelector("[name='teamTwoTotal']");
+      teamTwoTotalInput.value = teamTwoScores.reduce((total, score) => total + score, 0);
+    }
+
+    function calculateTeamTotal(teamPrefix) {
+      const scores = [];
+      for (let i = 1; i <= 12; i++) {
+        const scoreInput = document.querySelector(`[name='${teamPrefix}Qty${i}']`);
+        const scoreValue = scoreInput.value.trim();
+
+        let score;
+        if (scoreValue.toUpperCase() === "W") {
+          score = -5;
+        } else {
+          score = parseInt(scoreValue);
+          if (isNaN(score)) score = 0;
+        }
+
+        scores.push(score);
+      }
+      return scores;
+    }
+  </script>
+</body>
+</html>
